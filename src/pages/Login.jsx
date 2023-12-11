@@ -6,7 +6,7 @@ function Login() {
     <section className="h-screen grid place-items-center">
       <Form
         method="post"
-        className="card w-96 p-8 bg-base-100 shadow-lg flex flex-col gap-y-4"
+        className="card w-96 p-8 bg-base-100 shadow-xl flex flex-col gap-y-4"
       >
         <h4 className="text-center text-3xl font-bold">Login</h4>
         <FormInput
