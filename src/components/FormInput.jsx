@@ -1,17 +1,17 @@
-function FormInput({ label, name, type, defaultValue }) {
+function FormInput({ label, name, type, defaultValue, size }) {
   return (
-    <label className="form-control">
-      <div className="label">
-        <span className="label-text">{label}</span>
-      </div>
+    <div className="form-control">
+      <label className="label">
+        <span className="label-text capitalize">{label}</span>
+      </label>
       <input
         type={type}
         name={name}
         defaultValue={defaultValue}
         placeholder="Type here"
-        className="input input-bordered"
+        className={`${size} input input-bordered`}
       />
-    </label>
+    </div>
   )
 }
 export default FormInput
