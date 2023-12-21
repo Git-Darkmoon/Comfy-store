@@ -64,8 +64,8 @@ function SingleProduct() {
         />
         {/* PRODUCT */}
         <div>
-          <h1 className="capitalize font-bold text-3xl">{title}</h1>
-          <h4 className="text-xl text-neutral-content font-bold mt-2">
+          <h1 className="capitalize font-bold text-4xl">{title}</h1>
+          <h4 className="text-xl text-secondary font-semibold tracking-tight mt-2">
             {company}
           </h4>
           <p className="mt-3 text-xl">{dollarAmount}</p>
