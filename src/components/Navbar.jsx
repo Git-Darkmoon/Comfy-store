@@ -7,7 +7,7 @@ import { useSelector } from "react-redux"
 
 const themes = {
   garden: "garden",
-  dracula: "dracula",
+  sunset: "sunset",
 }
 
 function getThemeFromLocalStorage() {
@@ -18,8 +18,8 @@ function Navbar() {
   const [theme, setTheme] = useState(getThemeFromLocalStorage)
 
   function handleTheme() {
-    const { garden, dracula } = themes
-    const newTheme = theme === garden ? dracula : garden
+    const { garden, sunset } = themes
+    const newTheme = theme === garden ? sunset : garden
     setTheme(newTheme)
   }
 
@@ -31,7 +31,7 @@ function Navbar() {
   const numItemsInCart = useSelector((state) => state.cartState.numItemsInCart)
 
   return (
-    <nav className="bg-base-200">
+    <nav className="bg-base-200 transition-colors duration-200">
       <div className="navbar align-element">
         <div className="navbar-start">
           {/* TITLE */}
