@@ -1,5 +1,5 @@
 import { useSelector } from "react-redux"
-import { CartItemsList, SectionTitle, CartTotal } from "../components"
+import { CartItemsList, CartTotals, SectionTitle } from "../components"
 import { Link } from "react-router-dom"
 
 function Cart() {
@@ -20,7 +20,7 @@ function Cart() {
         </div>
 
         <div className="lg:col-span-4 lg:pl-4">
-          <CartTotal />
+          <CartTotals />
           {user ? (
             <Link to={"/checkout/"} className="btn btn-primary btn-block mt-8">
               Proceed to checkout
