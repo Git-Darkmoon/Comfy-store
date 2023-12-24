@@ -16,9 +16,9 @@ function Hero() {
           We are changing the way people shop
         </h1>
         <p className="mt-8 max-w-xl text-lg leading-8">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum quidem
-          aliquid laborum ducimus eveniet unde temporibus voluptatem eius
-          inventore sapiente.
+          Step into a realm of understated elegance at Comfy Store. Our high-end
+          furniture collections redefine luxury living, offering a harmonious
+          blend of comfort and sophistication.
         </p>
         <div className="mt-10">
           <Link to={"/products"} className="btn btn-primary uppercase">
