@@ -9,6 +9,17 @@ import { Toaster } from "sonner"
 ReactDOM.createRoot(document.getElementById("root")).render(
   <Provider store={store}>
     <App />
-    <Toaster position="top-right" closeButton />
+    <Toaster
+      position="top-right"
+      toastOptions={{
+        unstyled: true,
+        duration: 1750,
+        classNames: {
+          toast:
+            "flex items-center gap-x-2 bg-base-100 p-4 rounded-lg shadow-xl w-full",
+          title: "text-md",
+        },
+      }}
+    />
   </Provider>
 )
