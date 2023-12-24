@@ -1,7 +1,7 @@
 import { Form, Link, redirect } from "react-router-dom"
 import { FormInput, SubmitBtn } from "../components"
 import { customFetch } from "../utils"
-import { toast } from "react-toastify"
+import { toast } from "sonner"
 
 export const action = async ({ request }) => {
   const formData = await request.formData()
@@ -9,12 +9,12 @@ export const action = async ({ request }) => {
 
   try {
     const response = await customFetch.post("/auth/local/register", data)
-    toast.success("account created successfully")
+    toast.success("Account created successfully")
     return redirect("/login")
   } catch (error) {
     const errorMessage =
       error?.response?.data?.error?.message || "Please check your credentials"
-    toast.error(errorMessage)
+    toast.warning(errorMessage)
 
     return null
   }

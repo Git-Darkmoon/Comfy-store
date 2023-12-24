@@ -1,9 +1,9 @@
 import { Form, Link, redirect, useNavigate } from "react-router-dom"
 import { FormInput, SubmitBtn } from "../components"
 import { customFetch } from "../utils"
-import { toast } from "react-toastify"
 import { loginUser } from "../features/user/userSlice"
 import { useDispatch } from "react-redux"
+import { toast } from "sonner"
 
 export const action =
   (store) =>
@@ -19,7 +19,7 @@ export const action =
     } catch (error) {
       const errorMessage =
         error?.response?.data?.error?.message || "Please check your credentials"
-      toast.error(errorMessage)
+      toast.warning(errorMessage)
 
       return null
     }
@@ -36,11 +36,11 @@ function Login() {
         password: "secret",
       })
       dispatch(loginUser(response.data))
-      toast.success("welcome guest user")
+      toast.success("Welcome guest user")
       navigate("/")
     } catch (error) {
       console.log(error.message)
-      toast.error("guest user login error, try again")
+      toast.warning("Guest user login error, try again")
     }
   }
 

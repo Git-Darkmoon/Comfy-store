@@ -1,5 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit"
-import { toast } from "react-toastify"
+import { toast } from "sonner"
 
 const defaultState = {
   cartItems: [],
@@ -55,7 +55,7 @@ const cartSlice = createSlice({
       state.numItemsInCart -= product.amount
       state.cartTotal -= product.price * product.amount
       cartSlice.caseReducers.calculateTotals(state)
-      toast.error("Item removed from cart")
+      toast.info("Item removed from cart")
     },
     editItem: (state, action) => {
       const { cartID, amount } = action.payload
