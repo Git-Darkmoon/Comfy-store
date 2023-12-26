@@ -41,7 +41,8 @@ export const action =
         "There was an error placing your order"
       toast.warning(errorMessage)
 
-      if (error.response.status === 401) {
+      // eslint-disable-next-line no-constant-condition
+      if (error.response.status === 401 || 403) {
         return redirect("/login")
       }
 
