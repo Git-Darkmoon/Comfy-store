@@ -6,7 +6,7 @@ import { toast } from "sonner"
 import { clearCart } from "../features/cart/cartSlice"
 
 export const action =
-  (store) =>
+  (store, queryClient) =>
   async ({ request }) => {
     const formData = await request.formData()
     const { name, address } = Object.fromEntries(formData)
@@ -32,6 +32,7 @@ export const action =
           },
         }
       )
+      queryClient.removeQueries(["orders"])
       store.dispatch(clearCart())
       toast.success("Order placed successfully")
       return redirect("/orders")
@@ -42,7 +43,7 @@ export const action =
       toast.warning(errorMessage)
 
       // eslint-disable-next-line no-constant-condition
-      if (error.response.status === 401 || 403) {
+      if (error?.response?.status === 401 || 403) {
         return redirect("/login")
       }
 
